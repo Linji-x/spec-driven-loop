@@ -1,0 +1,46 @@
+name: Feature request
+description: Propose a focused improvement to the workflow, templates, examples, or packaging.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Failure mode or problem
+      description: What goes wrong today, and for which type of software delivery?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest change that would solve the problem.
+    validations:
+      required: true
+  - type: checkboxes
+    id: semantics
+    attributes:
+      label: Workflow semantics affected
+      options:
+        - label: Specification freezing or approval
+        - label: Agent planning or file ownership
+        - label: Main-agent judgment or evidence
+        - label: Durable documents or resume behavior
+        - label: Installation, packaging, or discovery
+        - label: Documentation or examples only
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Suggested acceptance evidence
+      description: How could a maintainer prove that the change works and does not weaken the core invariants?
+  - type: dropdown
+    id: implementation
+    attributes:
+      label: Contribution intent
+      options:
+        - I can open a pull request
+        - I can help test a proposed change
+        - I am requesting maintainer implementation
+    validations:
+      required: true
