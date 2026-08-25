@@ -1,0 +1,55 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validator dependency
+        run: python -m pip install --disable-pip-version-check PyYAML==6.0.3
+
+      - name: Verify generated Skill mirror
+        run: |
+          python scripts/sync_plugin_skill.py
+          git diff --exit-code
+
+      - name: Run OpenAI Skill validators
+        env:
+          OPENAI_SKILLS_COMMIT: 49f948faa9258a0c61caceaf225e179651397431
+        run: |
+          mkdir -p .tmp
+          curl -fsSL "https://raw.githubusercontent.com/openai/skills/${OPENAI_SKILLS_COMMIT}/skills/.system/skill-creator/scripts/quick_validate.py" -o .tmp/quick_validate.py
+          python .tmp/quick_validate.py spec-driven-loop
+          python .tmp/quick_validate.py plugins/spec-driven-loop/skills/spec-driven-loop
+
+      - name: Validate Plugin manifest
+        run: python scripts/validate_plugin.py plugins/spec-driven-loop
+
+      - name: Validate links, assets, examples, and paths
+        run: python scripts/validate_repo.py
+
+      - name: Build and validate release packages
+        run: |
+          python scripts/build_release.py
+          python scripts/validate_repo.py --dist
+
+      - name: Upload release packages for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: spec-driven-loop-v1.0.0
+          path: dist/*
+          if-no-files-found: error

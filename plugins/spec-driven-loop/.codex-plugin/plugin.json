@@ -1,0 +1,27 @@
+{
+  "name": "spec-driven-loop",
+  "version": "1.0.0",
+  "description": "Freeze software specifications, coordinate agent implementation, and independently judge delivery evidence.",
+  "author": {
+    "name": "Linji-x",
+    "url": "https://github.com/Linji-x/spec-driven-loop"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Spec-Driven Loop",
+    "shortDescription": "Freeze specs, coordinate agents, and judge evidence.",
+    "longDescription": "Turn uncertain medium-to-large software requests into approved specifications, dependency-aware agent plans, and evidence-backed main-agent acceptance loops.",
+    "developerName": "Linji-x",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Specification-first product and technical design",
+      "Dependency-aware multi-agent coordination",
+      "Independent evidence-backed acceptance"
+    ],
+    "websiteURL": "https://github.com/Linji-x/spec-driven-loop",
+    "brandColor": "#6D5EF8",
+    "composerIcon": "./skills/spec-driven-loop/assets/icon.svg",
+    "logo": "./skills/spec-driven-loop/assets/icon-512.png",
+    "defaultPrompt": "Use $spec-driven-loop to inspect this software request, freeze an approved specification and acceptance contract, coordinate implementation, and independently judge the evidence."
+  }
+}

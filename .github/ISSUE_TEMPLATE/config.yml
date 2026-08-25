@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and workflow discussion
+    url: https://github.com/Linji-x/spec-driven-loop/discussions
+    about: Ask for help, share an idea, or show a delivery case.
+  - name: OpenAI Skills documentation
+    url: https://developers.openai.com/codex/skills
+    about: Check current Codex skill installation and discovery behavior.

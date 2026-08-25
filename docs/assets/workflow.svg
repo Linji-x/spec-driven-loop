@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 360">
+  <title id="title">Spec-Driven Loop workflow</title>
+  <desc id="desc">Inspect, Grill, Freeze, Agents, Judge, then Loop back with evidence.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11152b"/>
+      <stop offset="1" stop-color="#241c46"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6d5ef8"/>
+      <stop offset="1" stop-color="#31d8b5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#060814" flood-opacity=".45"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8177ff"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <circle cx="1080" cy="-20" r="220" fill="#6d5ef8" opacity=".10"/>
+  <circle cx="90" cy="390" r="220" fill="#31d8b5" opacity=".08"/>
+  <g transform="translate(64 45)">
+    <rect x="0" y="0" width="50" height="50" rx="14" fill="url(#accent)"/>
+    <path d="M15 16h20M15 25h14M15 34h20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="35" cy="25" r="6" fill="#11152b" stroke="#fff" stroke-width="3"/>
+    <text x="70" y="25" fill="#fff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">Spec-Driven Loop</text>
+    <text x="70" y="52" fill="#bcb8da" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Freeze the target. Coordinate the work. Judge the evidence.</text>
+  </g>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" filter="url(#shadow)">
+    <g transform="translate(58 151)">
+      <rect width="158" height="72" rx="18" fill="#1e2444" stroke="#414b7a"/>
+      <text x="79" y="34" fill="#fff" text-anchor="middle" font-size="20" font-weight="700">Inspect</text>
+      <text x="79" y="55" fill="#aeb5d8" text-anchor="middle" font-size="12">facts first</text>
+    </g>
+    <g transform="translate(244 151)">
+      <rect width="158" height="72" rx="18" fill="#241f4c" stroke="#6658cf"/>
+      <text x="79" y="34" fill="#fff" text-anchor="middle" font-size="20" font-weight="700">Grill</text>
+      <text x="79" y="55" fill="#c6bfff" text-anchor="middle" font-size="12">decision frontier</text>
+    </g>
+    <g transform="translate(430 151)">
+      <rect width="158" height="72" rx="18" fill="#2a2052" stroke="#8470f2"/>
+      <text x="79" y="34" fill="#fff" text-anchor="middle" font-size="20" font-weight="700">Freeze</text>
+      <text x="79" y="55" fill="#d0c9ff" text-anchor="middle" font-size="12">approved contract</text>
+    </g>
+    <g transform="translate(616 151)">
+      <rect width="158" height="72" rx="18" fill="#222a4c" stroke="#4e7eb3"/>
+      <text x="79" y="34" fill="#fff" text-anchor="middle" font-size="20" font-weight="700">Agents</text>
+      <text x="79" y="55" fill="#b8d5ec" text-anchor="middle" font-size="12">owned execution</text>
+    </g>
+    <g transform="translate(802 151)">
+      <rect width="158" height="72" rx="18" fill="#183a43" stroke="#2dc4a5"/>
+      <text x="79" y="34" fill="#fff" text-anchor="middle" font-size="20" font-weight="700">Judge</text>
+      <text x="79" y="55" fill="#a7f1df" text-anchor="middle" font-size="12">independent proof</text>
+    </g>
+    <g transform="translate(988 151)">
+      <rect width="158" height="72" rx="18" fill="#183b39" stroke="#31d8b5"/>
+      <text x="79" y="34" fill="#fff" text-anchor="middle" font-size="20" font-weight="700">Loop</text>
+      <text x="79" y="55" fill="#a7f1df" text-anchor="middle" font-size="12">rework or accept</text>
+    </g>
+  </g>
+  <g stroke="#8177ff" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M216 187h24"/>
+    <path d="M402 187h24"/>
+    <path d="M588 187h24"/>
+    <path d="M774 187h24"/>
+    <path d="M960 187h24"/>
+  </g>
+  <path d="M1067 230v44c0 22-18 40-40 40H137c-22 0-40-18-40-40v-42" fill="none" stroke="#31d8b5" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <text x="600" y="302" fill="#9aa3cb" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">Every loop leaves durable evidence in PRD · TECH_DESIGN · ACCEPTANCE · AGENT_PLAN · LOOP</text>
+</svg>

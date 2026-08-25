@@ -1,0 +1,20 @@
+{
+  "name": "spec-driven-loop",
+  "interface": {
+    "displayName": "Spec-Driven Loop Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "spec-driven-loop",
+      "source": {
+        "source": "local",
+        "path": "./plugins/spec-driven-loop"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
