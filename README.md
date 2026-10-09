@@ -106,18 +106,21 @@ $spec-driven-loop 读取 docs/spec-driven/team-invites/，检查已批准的规�
 $spec-driven-loop 对本轮交付做主 Agent 独立验收；逐项给出 AC、证据、结果和缺口，不接受 Agent 自报完成
 ```
 
-## 完整演示：Job Dashboard
+## 可运行示例：Java 独立验收
 
-[匿名合成案例](examples/job-dashboard/README.md)展示了一个 Job Dashboard 如何从需求冻结走到最终验收。案例包含：
+[Java 验收示例](examples/java-acceptance/README.md)用冻结测试检查一个最小 `AuthService`，演示如何拒绝自报完成、错误补丁、伪造测试、编译失败、伪造测试输出和过期证据，并接受符合合同的补丁。
 
-- [PRD](examples/job-dashboard/PRD.md)
-- [技术设计](examples/job-dashboard/TECH_DESIGN.md)
-- [验收合同](examples/job-dashboard/ACCEPTANCE.md)
-- [Agent 计划](examples/job-dashboard/AGENT_PLAN.md)
-- [执行循环](examples/job-dashboard/LOOP.md)
-- 最终验收矩阵与真实形式的测试证据
+安装 Python 3.10+ 和 JDK 17+ 后，在仓库根目录运行：
 
-这是基于已完成前向测试整理的匿名合成示例，不包含真实客户、账号或私有代码。
+```text
+python examples/java-acceptance/run_demo.py
+```
+
+这是离线、确定性的 verifier replay：它执行预置候选和验收门槛，生成可检查的证据。它不调用模型，不展示实时多 Agent 开发，也不测量模型成功率。完整规格、稳定 AC ID 与失败后的下一步见示例目录。
+
+## 文档案例：Job Dashboard
+
+[Job Dashboard](examples/job-dashboard/README.md)保留了 PRD、技术设计、验收合同、Agent 计划和执行循环的匿名合成文档快照。仓库未包含该案例所描述的应用源码和测试，因此读者无法重跑其中的测试数字；它用于说明文档结构。需要可复现命令和验收证据时，请使用上面的 Java 示例。
 
 ## 其他安装方式
 

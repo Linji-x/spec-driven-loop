@@ -53,3 +53,34 @@ jobs:
           name: spec-driven-loop-v1.0.0
           path: dist/*
           if-no-files-found: error
+
+  acceptance-replay:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Test independent acceptance and evidence binding
+        run: python -m unittest discover -s examples/java-acceptance -p test_run_demo.py -v
+
+      - name: Replay rejected and accepted deliveries
+        run: python examples/java-acceptance/run_demo.py --output .tmp/java-acceptance-report.json
+
+      - name: Upload actual replay evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-acceptance-${{ matrix.os }}
+          path: .tmp/java-acceptance-report.json
+          if-no-files-found: error

@@ -112,6 +112,13 @@ def check_required_files(errors: list[str]) -> None:
         ROOT / "docs" / "release" / "v1.0.0.md",
     ]
     required.extend(ROOT / "examples" / "job-dashboard" / name for name in ("README.md", "PRD.md", "TECH_DESIGN.md", "ACCEPTANCE.md", "AGENT_PLAN.md", "LOOP.md"))
+    required.extend(
+        ROOT / "examples" / "java-acceptance" / name
+        for name in (
+            "README.md", "PRD.md", "TECH_DESIGN.md", "ACCEPTANCE.md",
+            "AGENT_PLAN.md", "LOOP.md", "contract.json", "run_demo.py", "test_run_demo.py",
+        )
+    )
     for path in required:
         if not path.is_file() or path.stat().st_size == 0:
             errors.append(f"required file missing or empty: {path.relative_to(ROOT)}")
