@@ -100,11 +100,21 @@ If the documents remain valid, the skill resumes planning or execution instead o
 $spec-driven-loop Independently judge this delivery. Report every AC, its evidence, result, and gap; do not accept agent self-reporting.
 ```
 
-## Worked example: Job Dashboard
+## Runnable example: independent Java acceptance
 
-The [anonymized synthetic case study](examples/job-dashboard/README.md) shows a Job Dashboard moving from a frozen request to final acceptance. It includes the complete [PRD](examples/job-dashboard/PRD.md), [technical design](examples/job-dashboard/TECH_DESIGN.md), [acceptance contract](examples/job-dashboard/ACCEPTANCE.md), [agent plan](examples/job-dashboard/AGENT_PLAN.md), [execution loop](examples/job-dashboard/LOOP.md), and final evidence matrix.
+The [Java acceptance example](examples/java-acceptance/README.md) checks a minimal `AuthService` against frozen tests. It rejects self-reported completion, an incorrect patch, forged tests, compilation failure, canned test output, and stale evidence, and accepts a patch that meets the contract.
 
-It is derived from a completed forward test and contains no real customer, account, or private source code.
+With Python 3.10+ and JDK 17+ installed, run from the repository root:
+
+```text
+python examples/java-acceptance/run_demo.py
+```
+
+This is an offline, deterministic verifier replay: it executes predefined candidates and acceptance gates and produces inspectable evidence. It makes no model calls, does not demonstrate live multi-agent development, and does not measure model success rates. The example directory includes the specification, stable AC IDs, and next actions after failure.
+
+## Documentation example: Job Dashboard
+
+The [Job Dashboard](examples/job-dashboard/README.md) preserves an anonymized synthetic snapshot of the PRD, technical design, acceptance contract, agent plan, and execution loop. The application source and tests described in that snapshot are absent from this repository, so its test counts cannot be reproduced here. Use it to understand the document structure; use the Java example above for runnable acceptance evidence.
 
 ## Other installation options
 

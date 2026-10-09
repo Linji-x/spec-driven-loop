@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "task_id": "TASK-001",
+  "task": "Repair AuthService.authenticateToken without changing the acceptance tests.",
+  "candidate_root": "fixture/candidate",
+  "required_files": ["src/AuthService.java", "src/TokenClient.java"],
+  "allowed_write_paths": ["src/AuthService.java"],
+  "frozen_test_path": "fixture/tests/AuthServiceAcceptance.java",
+  "test_main_class": "AuthServiceAcceptance",
+  "java_release": 17,
+  "compile_timeout_seconds": 15,
+  "run_timeout_seconds": 5,
+  "acceptance_criteria": [
+    {"id": "AC-001", "description": "Accept exactly the usr- prefix followed by a nonempty suffix."},
+    {"id": "AC-002", "description": "Reject null, empty strings, wrong prefixes, and usr- without a suffix."},
+    {"id": "AC-003", "description": "Compile the allowed candidate sources and pass every frozen external Java test."},
+    {"id": "AC-004", "description": "Bind acceptance evidence to the current complete candidate tree, frozen tests, contract, and verifier."}
+  ],
+  "expected_test_cases": [
+    "valid_minimum", "valid_long", "valid_unicode", "valid_whitespace_suffix",
+    "null_token", "empty_token", "wrong_prefix", "missing_suffix", "leading_space"
+  ]
+}
